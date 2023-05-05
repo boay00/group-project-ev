@@ -7,24 +7,44 @@ Authors: Aichieh Lin, Bede Young, and Charles Ramey
 
 ### Problem Statement
 
-In a bid to improve air quality, vehicle manufacturers and policy makers are working to reduce carbon emissions from road vehicles by increasing availability of electric vehicles (EVs) and EV charging stations. Policy makers are aiming to meet net zero emission targets, and have requested analysis into the progress and effectiveness of building out EV infrastructure and increasing EV registration on air pollution levels. As part of progressing towards net zero emissions, policy makers are seeking to determine how many EV registrations and charging stations will yield a 10% improvement to the air quality index. This project analyzes EV trends and data collected on air quality, and uses a time-series model to predict air quality based on EV registration and charging station quantities.
+In a bid to improve air quality, vehicle manufacturers and policy makers are working to reduce carbon emissions from road vehicles by increasing availability of electric vehicles (EVs) and EV charging stations. Policy makers are aiming to meet net zero emission targets, and have requested analysis into the progress and effectiveness of building out EV infrastructure and increasing EV registration on air pollution levels. As part of progressing towards net zero emissions, policy makers are seeking to determine how many EV registrations and charging stations will yield a 10% improvement to the air quality index. This project analyzes EV trends and data collected on air quality, and uses a time-series model to forecast air quality levels, and a regression model to predict the number of charging stations that need to be installed to meet air quality reduction targets
 
 ---
 
 ### Summary
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### Data Collection
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Data was collected from a range of sources. 
+Air quality data :
+- United States Environmental Protection Agency
+Population Data :
+- Cencus Bureau
+Electric Vehicle and Charging Station Data :
+- Alternative Fuels Data Center
 
+#### EDA
 
+Datasets were cleaned and analysed for the US, and subsequently for states of interest.
+- Number of EV registrations was evaluated against EV charging station counts, to confirm colinear relationship
+- Geopandas heatmaps were used to identify target states
+- Air quality was analysed over the time period available for these states
+
+#### Modeling
+
+- Time series models were produced to forecast the air quality projections based on historical data
+- Regression models were trained and used to predict the number of EV charging stations required to meet set targets of air quality
 ---
 
 ### Conclusion and Recommendations
 
-Through our analysis, we were able to conclude that there is a direct relationship between the number of available EV charging stations and the number of EVs owned. This is consistent with consumer surveys that identify lack EV charging stations as a key reason consumers are choosing not to switch to an EV. Our exploration of the data also revealed a correlation between the number of EV charging stations and the AQI for a number of states, though the evidence is not overwhelming.
+Through our analysis, we observed a direct relationship between the number of available EV charging stations and the number of EVs owned. This is consistent with consumer surveys that identify lack EV charging stations as a key reason consumers are choosing not to switch to an EV. Our exploration of the data also revealed a correlation between the number of EV charging stations and the AQI for a number of states, though the evidence is not overwhelming.
 
-The models created in this project do not conclusively suggest that an increase in the number of EV charging stations and EVs will yield the desired reduction in poor air quality days. However, the findings of our EDA lead us to believe that it is worth continuing to investigate this relationship as well as other factors that influence EV ownership. Our recommendations for advancement of this analysis and next steps include:
+The models created in this project do not conclusively suggest that an increase in the number of EV charging stations and EVs will yield the desired reduction in poor air quality days. However, the findings of our EDA lead us to believe that it is worth continuing to investigate this relationship as well as other factors that influence EV ownership. 
+
+Theoretical predictions showed that with a stronger model, we were able to generate predicted targets for EV charging station installments in Arizona - based on 10% annual reductions in the number of days classed 'bad' for air quality.
+
+Our recommendations for advancement of this analysis and next steps include:
 - Evaluating Alternative Data Sources:
     - This analysis used daily and annual AQI data, however one shortcoming of this data is that its availability by county, state, and year varies. In some cases, AQI data is collected nearly every day of the year and in others it is collected far less. As a result, a lot of detail was lost through the normalization of the data.
     - Using actual concentrations of emissions-specific pollutants would likely yield better results, as AQI is a measurement of overall air quality and can be influenced heavily by unrelated events like wildfires.
