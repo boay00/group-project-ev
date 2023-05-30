@@ -1,0 +1,10 @@
+
+streamlit
+Pillow
+
+requests
+pandas
+numpy
+matplotlib
+seaborn
+geopandas
