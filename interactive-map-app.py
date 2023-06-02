@@ -6,7 +6,9 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 
-st.markdown('## US States - Air Quality vs EV Charging Stations')
+st.markdown('''## US States - Air Quality vs EV Charging Stations
+---
+    #### Bede Young''')
 
 slider_value = st.empty()
 
