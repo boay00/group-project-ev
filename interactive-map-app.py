@@ -7,9 +7,12 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 st.markdown('''## US States - Air Quality vs EV Charging Stations
----
-#### Bede Young''')
-            
+''')
+
+st.markdown('''#### Bede Young''')
+st.write('')
+st.image('smog.png')
+st.markdown('_*Source - NBC*_')
 st.markdown('''---
 This app is a demo of the heatmaps which were used to identify the states with the most pressing need of electric charging station installations.
 
